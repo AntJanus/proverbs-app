@@ -75,3 +75,5 @@ proverbs[]: A poor programmer blames the language
 proverbs[]: The code's writin' but ain't nobody programming
 -----
 proverbs[]: Mañana often has the most tickets
+-----
+proverbs[]: Think about your dance moves when drunk, next time you try to code with some beers on your count.
