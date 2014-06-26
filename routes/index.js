@@ -9,44 +9,32 @@ var _         = require('lodash');
 var async     = require('async');
 var md        = require('marked');
 
-//routes
-app.get('/*', function(req,res) {
-  var slug = req.params[0].split('/');
+var getProverbs = function() {
+  var slug = [''];
   var payload = {};
-  var format = req.query.format ? req.query.format : null;
   payload = reader.getFile(slug);
 
+  return payload;
+};
+
+//routes
+app.get('/', function(req,res) {
+  var payload = getProverbs();
+
   if (payload.error) {
-    res.render('404', payload);
+    res.send('404', payload);
   } else {
-    payload.path.shift();
-    var path = payload.path.join('/');
-    var meta = {};
-
-    meta.children = function(callback) {
-      reader.getChildren(path, 0, function(result) {
-        callback(null, result);
-      });
-    };
-
-    meta.main = function(callback) {
-      reader.getChildren('', 0, function(result) {
-        callback(null, result);
-      });
-    };
-
-    async.parallel(meta, function(err, result) {
-      payload.children = result.children;
-      payload.site = config.site;
-      payload.main = result.main;
-
-      if (format === 'json') {
-        res.send(payload);
-      } else {
-        payload.md = md;
-        res.render('index', payload);
-      }
-    });
+    res.send(payload.proverbs);
   }
 });
 
+app.get('/random', function(req,res) {
+  var payload = getProverbs();
+
+  if (payload.error) {
+    res.send('404', payload);
+  } else {
+    var proverbs = payload.proverbs;
+    res.send(proverbs[Math.floor(Math.random() * proverbs.length)]);
+  }
+});

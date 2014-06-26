@@ -7,6 +7,6 @@ module.exports = {
     enabled: false
   },
   site: {
-    title: 'Popstar CMS',
+    title: 'Programming Proverbs',
   }
 };
