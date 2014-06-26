@@ -1,0 +1,33 @@
+{
+  "name": "tseczka-css",
+  "version": "0.0.3",
+  "homepage": "https://github.com/AntJanus/tseczka-CSS-framework",
+  "authors": [
+    "Antonin Januska <antonin@antjanus.com>"
+  ],
+  "description": "Modular css framework meant to serve as a starter/boilerplate in development as well as a prototypical tool",
+  "main": "dist/tseczka.css",
+  "keywords": [
+    "css",
+    "framework",
+    "less",
+    "grid"
+  ],
+  "license": "MIT",
+  "private": false,
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "**.html",
+    "**/.**"
+  ],
+  "_release": "0.0.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.3",
+    "commit": "6ac5081b9c38d0d84c9922aa2f0745f456a4d431"
+  },
+  "_source": "git://github.com/AntJanus/tseczka-CSS-framework.git",
+  "_target": "v0.0.x",
+  "_originalSource": "tseczka-CSS-framework"
+}
