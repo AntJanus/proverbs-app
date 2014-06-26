@@ -8,7 +8,7 @@ proverbs[]: Don't commit on master when drunk.
 -----
 proverbs[]: Sleep on a force push.
 -----
-proverbs[]: A git pull a day, keeps the doctor away
+proverbs[]: A git pull a day, keeps the doctor away.
 -----
 proverbs[]: Sometimes you have to cut legacy support to allow the new product to bloom.
 -----
