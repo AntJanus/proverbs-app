@@ -20,15 +20,15 @@ proverbs[]: Scope creep makes a mountain.
 -----
 proverbs[]: A hundred programmers won't make a two-year project in a week.
 -----
-proverbs[]: Facebook wasn't built in a day
+proverbs[]: Facebook wasn't built in a day.
 -----
-proverbs[]: "Just ship" is no substitute for design
+proverbs[]: "Just ship" is no substitute for design.
 -----
-proverbs[]: Today's fashion is tomorrow's legacy
+proverbs[]: Today's fashion is tomorrow's legacy.
 -----
-proverbs[]: Learning obscure and strange languages, yields better understanding and broader horizons
+proverbs[]: Learning obscure and strange languages, yields better understanding and broader horizons.
 -----
-proverbs[]: The better job you do, the easier others discount the level of difficulty
+proverbs[]: The better job you do, the easier others discount the level of difficulty.
 -----
 proverbs[]: Testing is easier than debugging.
 -----
@@ -40,13 +40,13 @@ proverbs[]: Debugging is twice as hard as writing the code in the first place. T
 -----
 proverbs[]: Absence is beauty, in error logs.
 -----
-proverbs[]: Eternal sunshine of the stateless mind
+proverbs[]: Eternal sunshine of the stateless mind.
 -----
 proverbs[]: Laziness is your best friend.  Never do twice what you can automate once.
 -----
 proverbs[]: Good test coverage + automated workflows = quiet cell phones and better sleep.
 -----
-proverbs[]: The best code is no code at all
+proverbs[]: The best code is no code at all.
 -----
 proverbs[]: The best request is the one you don't make.
 -----
@@ -62,6 +62,8 @@ proverbs[]: Without boilerplate, there's no speedy development.
 -----
 proverbs[]: Code frustration is a bad advisor for a refactor.
 -----
+proverbs: The more technology you learn, the more you realize how little you know.
+-----
 proverbs[]: An early BETA launch will teach you more than a delayed promise.
 -----
 proverbs[]: All applications are pretty when your screen is off.
@@ -70,10 +72,16 @@ proverbs[]: Do not pick a framework for its demo page, instead pick it for its c
 -----
 proverbs[]: You cannot set a web standard alone.
 -----
-proverbs[]: A poor programmer blames the language
+proverbs[]: A poor programmer blames the language.
 -----
-proverbs[]: The code's writin' but ain't nobody programming
+proverbs[]: The code's writin' but ain't nobody programming.
 -----
-proverbs[]: Mañana often has the most tickets
+proverbs[]: Mañana often has the most tickets.
+-----
+proverbs[]: Never optimize before measuring.
 -----
 proverbs[]: Think about your dance moves when drunk, next time you try to code with some beers on your count.
+-----
+proverbs[]: What happens in Git stays in Git.
+-----
+proverbs[]: Simpler code has less bugs.
