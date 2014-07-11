@@ -34,8 +34,7 @@ app.get('/random', function(req,res) {
   if (payload.error) {
     res.send('404', payload);
   } else {
-    var proverbs = payload.proverbs;
-    res.setHeader('content-type', 'application/json');
-    res.send(proverbs[Math.floor(Math.random() * proverbs.length)]);
+    res.set({ 'content-type': 'application/json; charset=utf-8' });
+    res.send(payload.proverbs[Math.floor(Math.random() * payload.proverbs.length)]);
   }
 });
