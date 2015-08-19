@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
-    "test": "grunt test"
+    "test": "grunt test",
+    "pm2": "PORT=3005 pm2 start server.js --name=\"proverbs-app\""
   },
   "dependencies": {
     "async": "0.7.x",
