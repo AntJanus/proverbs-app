@@ -2,6 +2,10 @@
 
 var express   = require('express');
 var app       = module.exports = express();
+
+//plugins
+var cors      = require('cors')
+
 var config    = require('../config');
 var Reader    = require('./lib/reader');
 var reader    = new Reader(config.reader ? config.reader : {});
@@ -16,6 +20,10 @@ var getProverbs = function() {
 
   return payload;
 };
+
+
+//plugins
+app.use(cors());
 
 //routes
 app.get('/', function(req,res) {

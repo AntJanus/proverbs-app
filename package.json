@@ -7,11 +7,12 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "express": "4.13.3",
-    "lodash": "3.10.1",
-    "json-structure-validator": "0.0.x",
     "async": "1.4.x",
+    "cors": "^2.7.1",
+    "express": "4.13.3",
     "jade": "1.11.x",
+    "json-structure-validator": "0.0.x",
+    "lodash": "3.10.1",
     "marked": "0.3.x"
   },
   "devDependencies": {
