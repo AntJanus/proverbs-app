@@ -1,17 +1,17 @@
 //modules
 
-var express   = require('express');
-var app       = module.exports = express();
+import express from 'express';
 
 //plugins
-var cors      = require('cors')
+import config  from '../config';
+import Reader  from './lib/reader';
+import _       from 'lodash';
+import async   from 'async';
+import md      from 'marked';
 
-var config    = require('../config');
-var Reader    = require('./lib/reader');
 var reader    = new Reader(config.reader ? config.reader : {});
-var _         = require('lodash');
-var async     = require('async');
-var md        = require('marked');
+
+var app = express();
 
 var getProverbs = function() {
   var slug = [''];
@@ -20,10 +20,6 @@ var getProverbs = function() {
 
   return payload;
 };
-
-
-//plugins
-app.use(cors());
 
 //routes
 app.get('/', function(req,res) {
@@ -47,3 +43,5 @@ app.get('/random', function(req,res) {
     res.jsonp(payload.proverbs[Math.floor(Math.random() * payload.proverbs.length)]);
   }
 });
+
+export default app;

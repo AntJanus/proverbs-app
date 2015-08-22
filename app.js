@@ -1,31 +1,27 @@
-/**
- * Module dependencies.
- */
+import express from 'express';
 
-var express = require('express');
-var path    = require('path');
-var routes  = require('./routes');
+import path from 'path';
+import routes from './routes';
+
+//plugins
+import bodyParser from 'body-parser';
+
 var app     = express();
 
-app.set('port', process.env.PORT || 3000);
-app.set('views', __dirname + '/views');
-app.set('view engine', 'jade');
-app.use(express.favicon());
-app.use(express.urlencoded());
-app.use(express.json());
-app.use(express.methodOverride());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   next();
 });
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
-app.use(app.router);
 
-if ('development' === app.get('env')) {
-  app.use(express.logger('dev'));
-  app.use(express.errorHandler());
-}
+app.listen(3000 || process.env.PORT, () => {
+	console.log('Server running.');
+});
 
-module.exports = app;
+export default app;
