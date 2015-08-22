@@ -1,17 +1,18 @@
 //modules
 
-var express   = require('express');
-var app       = module.exports = express();
+import express from 'express';
 
 //plugins
-var cors      = require('cors')
+import cors    from 'cors';
 
-var config    = require('../config');
-var Reader    = require('./lib/reader');
+import config  from '../config';
+import Reader  from './lib/reader';
+import _       from 'lodash';
+import async   from 'async';
+import md      from 'marked';
+
 var reader    = new Reader(config.reader ? config.reader : {});
-var _         = require('lodash');
-var async     = require('async');
-var md        = require('marked');
+var app = express;
 
 var getProverbs = function() {
   var slug = [''];

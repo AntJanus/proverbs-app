@@ -8,11 +8,10 @@
     "pm2": "PORT=3005 pm2 start server.js --name=\"proverbs-app\""
   },
   "dependencies": {
-    "async": "0.7.x",
-    "express": "3.4.3",
-    "jade": "1.3.x",
-    "json-structure-validator": "0.0.x",
-    "lodash": "2.4.1",
+    "async": "1.4.x",
+    "body-parser": "^1.13.3",
+    "express": "4.13.3",
+    "lodash": "3.10.1",
     "marked": "0.3.x"
   },
   "devDependencies": {
@@ -23,10 +22,11 @@
     "grunt-contrib-less": "~1.0.1",
     "grunt-develop": "~0.4.0",
     "grunt-mocha-test": "~0.12.7",
+    "json-structure-validator": "0.0.x",
     "mocha": "2.2.5",
     "should": "7.0.4",
     "time-grunt": "~1.2.1",
     "load-grunt-tasks": "~3.2.0",
-    "request": "~2.60.0"
+    "request": "~2.61.0"
   }
 }
