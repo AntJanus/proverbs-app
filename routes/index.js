@@ -3,8 +3,10 @@
 var express   = require('express');
 var app       = module.exports = express();
 
+var cache     = require('memory-cache');
+
 //plugins
-var cors      = require('cors')
+var cors      = require('cors');
 
 var config    = require('../config');
 var Reader    = require('./lib/reader');
@@ -13,21 +15,15 @@ var _         = require('lodash');
 var async     = require('async');
 var md        = require('marked');
 
-var getProverbs = function() {
-  var slug = [''];
-  var payload = {};
-  payload = reader.getFile(slug);
-
-  return payload;
-};
-
 
 //plugins
 app.use(cors());
 
 //routes
 app.get('/', function(req,res) {
-  var payload = getProverbs();
+  var payload = getProverbData();
+
+  cache.put('proverbs', payload);
 
   if (payload.error) {
     res.send('404', payload);
@@ -38,7 +34,7 @@ app.get('/', function(req,res) {
 });
 
 app.get('/random', function(req,res) {
-  var payload = getProverbs();
+  var payload = getProverbData();
 
   if (payload.error) {
     res.send('404', payload);
@@ -47,3 +43,27 @@ app.get('/random', function(req,res) {
     res.jsonp(payload.proverbs[Math.floor(Math.random() * payload.proverbs.length)]);
   }
 });
+
+function getProverbData() {
+  var proverbs = cache.get('proverbs');
+  if(proverbs) {
+    return proverbs;
+  }
+
+  proverbs = getProverbs();
+
+  cache.put('proverbs', proverbs, (1000 * 60 * 60 * 24 * 3));
+
+  return proverbs;
+}
+
+function getProverbs() {
+  var slug = [''];
+  var payload = {};
+  payload = reader.getFile(slug);
+
+  return payload;
+};
+
+
+module.exports = app;

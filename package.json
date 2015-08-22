@@ -9,11 +9,13 @@
   },
   "dependencies": {
     "async": "0.7.x",
+    "cors": "^2.7.1",
     "express": "3.4.3",
     "jade": "1.3.x",
     "json-structure-validator": "0.0.x",
     "lodash": "2.4.1",
-    "marked": "0.3.x"
+    "marked": "0.3.x",
+    "memory-cache": "^0.1.4"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
