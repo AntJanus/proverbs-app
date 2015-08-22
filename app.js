@@ -20,7 +20,7 @@ app.use(function(req, res, next) {
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
-app.listen(3000 || process.env.PORT, () => {
+app.listen(process.env.NODE_PORT || 3000, () => {
 	console.log('Server running.');
 });
 

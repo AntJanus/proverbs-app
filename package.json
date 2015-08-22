@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node app.js",
     "test": "grunt test",
-    "pm2": "PORT=3005 pm2 start server.js --name=\"proverbs-app\""
+    "pm2": "pm2 start server.js --name=\"proverbs-app\""
   },
   "dependencies": {
     "async": "1.4.x",
