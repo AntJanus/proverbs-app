@@ -3,8 +3,6 @@
 import express from 'express';
 
 //plugins
-import cors    from 'cors';
-
 import config  from '../config';
 import Reader  from './lib/reader';
 import _       from 'lodash';
@@ -12,7 +10,8 @@ import async   from 'async';
 import md      from 'marked';
 
 var reader    = new Reader(config.reader ? config.reader : {});
-var app = express;
+
+var app = express();
 
 var getProverbs = function() {
   var slug = [''];
@@ -21,10 +20,6 @@ var getProverbs = function() {
 
   return payload;
 };
-
-
-//plugins
-app.use(cors());
 
 //routes
 app.get('/', function(req,res) {
@@ -48,3 +43,5 @@ app.get('/random', function(req,res) {
     res.jsonp(payload.proverbs[Math.floor(Math.random() * payload.proverbs.length)]);
   }
 });
+
+export default app;
