@@ -36,7 +36,7 @@ app.get('/random', function(req,res) {
     res.send('404', payload);
   } else {
     res.set({ 'content-type': 'application/json; charset=utf-8' });
-    res.jsonp(payload.proverbs[Math.floor(Math.random() * payload.proverbs.length)]);
+    res.jsonp(_.sample(payload.proverbs));
   }
 });
 
