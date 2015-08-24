@@ -17,28 +17,33 @@ var app = express();
 
 //routes
 app.get('/', function(req,res) {
-  var payload = getProverbData();
-
-  cache.put('proverbs', payload);
-
-  if (payload.error) {
-    res.send('404', payload);
-  } else {
-    res.set({ 'content-type': 'application/json; charset=utf-8' });
-    res.jsonp(payload.proverbs);
-  }
+  getReponse(res, 'full');
 });
 
 app.get('/random', function(req,res) {
+  getReponse(res, 'random');
+});
+
+function getReponse(res, view) {
   var payload = getProverbData();
 
   if (payload.error) {
     res.send('404', payload);
   } else {
     res.set({ 'content-type': 'application/json; charset=utf-8' });
-    res.jsonp(payload.proverbs[Math.floor(Math.random() * payload.proverbs.length)]);
+
+    switch(view) {
+      case 'full':
+        cache.put('proverbs', payload);
+
+        res.jsonp(payload.proverbs);
+        break;
+      case 'random':
+        res.jsonp(_.sample(payload.proverbs));
+        break;
+    }
   }
-});
+}
 
 function getProverbData() {
   var proverbs = cache.get('proverbs');
